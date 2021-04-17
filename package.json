@@ -1,0 +1,35 @@
+{
+  "name": "mail-action",
+  "version": "1.0.0",
+  "description": "Github Action for Sending Email",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "ncc build src/index.js",
+    "start": "node src/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/insgreeb-pro/mail-action.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/insgreeb-pro/mail-action/issues"
+  },
+  "homepage": "https://github.com/insgreeb-pro/mail-action#readme",
+  "devDependencies": {
+    "@vercel/ncc": "^0.28.3",
+    "husky": "4"
+  },
+  "dependencies": {
+    "@actions/core": "^1.2.7",
+    "nodemailer": "^6.5.0"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "yarn build"
+    }
+  }
+}

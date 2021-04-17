@@ -1,0 +1,26 @@
+name: "Mail Action"
+description: "Github Action for Sending Email"
+
+inputs:
+  email:
+    description: "Email from Gmail"
+    required: true
+  password:
+    description: "Gmail password"
+    required: true
+  to:
+    description: "Email destination"
+    required: true
+  subject:
+    description: "Email subject"
+    required: true
+  text:
+    description: "Email body"
+    required: false
+  html:
+    description: "Email body using html"
+    required: false
+
+runs:
+  using: node12
+  main: dist/index.js

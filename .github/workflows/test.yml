@@ -1,0 +1,21 @@
+name: Test Sending Email
+
+on:
+  push:
+    branches:
+      - "master"
+
+jobs:
+  test:
+    name: Test
+    runs-on: ubuntu-latest
+    steps:
+      - uses: insgreeb-pro/mail-action@master
+        with:
+          email: ${{ secrets.EMAIL_USER }}
+          password: ${{ secrets.EMAIL_PASSWORD }}
+          to: ${{ secrets.TO }}
+          subject: Email Notification ${{ github.repository }}
+          html: |
+            <p>Actor: ${{ github.actor }}</p>
+            <p>Message: ${{ github.event.head_commit.message }}</p>
