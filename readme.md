@@ -25,3 +25,7 @@ Sending Email via github action using gmail service.
 **html** (_optional_) email body using html
 
 ---
+
+**Note**:
+
+> Don't forget to activate less secure app on gmail settings.
