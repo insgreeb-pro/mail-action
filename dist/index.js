@@ -13267,8 +13267,9 @@ const core = __nccwpck_require__(2186)
 
 const transport = nodeMailer.createTransport({
   host: "smtp.gmail.com",
-  port: 465,
-  secure: true,
+  port: 587,
+  ignoreTLS: false,
+  secure: false,
   auth: {
     user: core.getInput("email"),
     pass: core.getInput("password"),
