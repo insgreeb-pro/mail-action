@@ -13268,14 +13268,14 @@ const core = __nccwpck_require__(2186)
 const transport = nodeMailer.createTransport({
   service: "gmail",
   auth: {
-    user: core.getInput("username"),
+    user: core.getInput("email"),
     pass: core.getInput("password"),
   },
 })
 
 transport.sendMail(
   {
-    from: core.getInput("username"),
+    from: core.getInput("email"),
     to: core.getInput("to"),
     subject: core.getInput("subject"),
     text: core.getInput("text"),
