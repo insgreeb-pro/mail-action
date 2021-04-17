@@ -13266,7 +13266,9 @@ const nodeMailer = __nccwpck_require__(4289)
 const core = __nccwpck_require__(2186)
 
 const transport = nodeMailer.createTransport({
-  service: "gmail",
+  host: "smtp.gmail.com",
+  port: 465,
+  secure: true,
   auth: {
     user: core.getInput("email"),
     pass: core.getInput("password"),
@@ -13282,7 +13284,7 @@ transport.sendMail(
     html: core.getInput("html"),
   },
   (err, info) => {
-    if (err) throw err
+    if (err) throw err.message
     console.log("Mail Send: " + info.response)
   }
 )
